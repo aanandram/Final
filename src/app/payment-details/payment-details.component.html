@@ -1,0 +1,40 @@
+<form #userform="ngForm" (ngSubmit)="Submit()">
+
+  <div class="form-group">
+             
+    <input type="hidden" 
+    name="PMId" 
+    [(ngModel)] ="service.payment.PMId" 
+    class="form-control">
+  
+  </div>
+
+  <div class="form-group">
+      <label>Card Owner Name</label>          
+      <input type="text"
+       name="CardOwnerName"
+      [(ngModel)] ="service.payment.CardOwnerName" 
+      #cardName = "ngModel"
+      [class.is-invalid] = "cardName.invalid && cardName.touched"
+      required
+      class="form-control">
+   </div>
+
+  <div class="form-group">
+      <label>Card Number</label>          
+      <input type="text" name="CardNumber" [(ngModel)] ="service.payment.CardNumber" class="form-control">
+  </div>
+
+  <div class="form-group">
+      <label>Expiration Date</label>          
+      <input type="text" name="ExpirationDate" [(ngModel)] ="service.payment.ExpirationDate" class="form-control">
+  </div>
+
+  <div class="form-group">
+      <label>CVV</label>          
+      <input type="text" name="CVV" [(ngModel)]="service.payment.CVV" class="form-control">
+  </div>
+
+  <input type="submit" class="btn btn-primary">
+
+</form>

@@ -1,0 +1,7 @@
+<table class="table table-hover">
+  <tr *ngFor="let pay of payments">
+    <td (click) ="populate(pay)">{{pay.PMId}} </td>
+    <td (click) ="populate(pay)">{{pay.CardOwnerName}} </td>    
+  </tr>
+
+</table>
